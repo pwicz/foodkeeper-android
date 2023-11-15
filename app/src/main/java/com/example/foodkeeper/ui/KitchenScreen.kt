@@ -7,6 +7,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -204,9 +205,11 @@ fun SearchBar(color: Color, modifier: Modifier = Modifier) {
 //}
 
 @Composable //category heading
-fun Categories(category: String, icon: Painter, modifier: Modifier = Modifier){
+fun Categories(category: String, icon: Painter,){
     Row (verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(bottom = 5.dp)){
+        modifier = Modifier
+//            .clickable { onHeaderClicked() }
+            .padding(bottom = 5.dp)){
         Icon(
             painter = icon,
             contentDescription = null,
@@ -220,6 +223,11 @@ fun Categories(category: String, icon: Painter, modifier: Modifier = Modifier){
             fontWeight = FontWeight.Bold,
             fontSize = 16.sp,
         )
+//        if (isExpanded) {
+//            Icon(painter = painterResource(id = R.drawable.collapse_icon), contentDescription = "collapse section", modifier = Modifier.padding(start = 4.dp))
+//        } else {
+//            Icon(painter = painterResource(id = R.drawable.uncollapsed_arrow), contentDescription = "expand section", modifier = Modifier.padding(start = 4.dp))
+//        }
 
     }
 }
@@ -289,19 +297,6 @@ fun ItemCard(itemImage: Painter, item: String, weight: Int, days: Int, quantity:
         }
     }
 }
-
-
-//    IconToggleButton(
-//        checked: true,
-//        onCheckedChange: (Boolean) -> Unit,
-//        modifier: Modifier = Modifier,
-//        enabled: Boolean = true,
-//        interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-//    ) {
-//
-//    }
-
-
 
 @Preview(showBackground = true)
 @Composable
