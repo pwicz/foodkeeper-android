@@ -303,7 +303,6 @@ fun ItemCard(itemImage: Painter, item: String, weight: Int, days: Int, quantity:
 fun KitchenScreenPreview() {
     FoodKeeperTheme {
         // A surface container using the 'background' color from the theme
-        FoodKeeperTheme {
             // A surface container using the 'background' color from the theme
             Surface(
                 modifier = Modifier.fillMaxSize(),
@@ -346,7 +345,7 @@ fun KitchenScreenPreview() {
                 }
             }
         }
-    }
+
 }
 
 
